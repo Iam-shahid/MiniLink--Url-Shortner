@@ -1,0 +1,30 @@
+{
+  "name": "minilink",
+  "version": "1.0.0",
+  "description": "A simple URL shortener built using Node.js and EJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "url-shortener",
+    "nodejs",
+    "express",
+    "ejs",
+    "mongodb",
+    "web-development",
+    "minilink"
+  ],
+  "author": "shahid",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.3",
+    "nodemon": "^3.1.10",
+    "shortid": "^2.2.17"
+  }
+}
