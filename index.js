@@ -18,8 +18,28 @@ app.use(express.urlencoded({extended:true}))
 
 app.use('/',userRouter)
 
-app.listen(port,()=>{
-    connectDb()
-    console.log(`server started at ${port}`);
+// app.listen(port,()=>{
+//     connectDb()
+//     console.log(`server started at ${port}`);
     
-})
+// })
+
+// Default 404 handler
+app.use((req, res) => {
+  res.status(404).send("Page Not Found");
+});
+
+// Start server after connecting to DB
+const startServer = async () => {
+  try {
+    await connectDb(); // make sure connectDb returns a promise
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  } catch (error) {
+    console.error("Failed to connect to DB:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
